@@ -1,0 +1,89 @@
+[
+    {
+        "id": "1",
+        "nombre": "Carlos Ramírez",
+        "comunidad": "Comunidad Arecibo",
+        "grupo": "Grupo 1",
+        "calendario": [
+            {
+                "dia": "Miércoles 20",
+                "encuentro": "Clase de Matemáticas",
+                "horario": "09:00 - 10:30",
+                "edificio": "Alfa",
+                "salon": "110"
+            },
+            {
+                "dia": "Jueves 21",
+                "encuentro": "Laboratorio de Física",
+                "horario": "11:00 - 13:00",
+                "edificio": "Beta",
+                "salon": "210"
+            },
+            {
+                "dia": "Viernes 22",
+                "encuentro": "Taller de Programación",
+                "horario": "14:00 - 16:00",
+                "edificio": "Gama",
+                "salon": "310"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "nombre": "María López",
+        "comunidad": "Comunidad Ponce",
+        "grupo": "Grupo 2",
+        "calendario": [
+            {
+                "dia": "Miércoles 20",
+                "encuentro": "Seminario de Historia",
+                "horario": "08:30 - 10:00",
+                "edificio": "Delta",
+                "salon": "120"
+            },
+            {
+                "dia": "Jueves 21",
+                "encuentro": "Prácticas de Química",
+                "horario": "12:00 - 14:00",
+                "edificio": "Épsilon",
+                "salon": "220"
+            },
+            {
+                "dia": "Viernes 22",
+                "encuentro": "Charla sobre Literatura",
+                "horario": "15:00 - 17:00",
+                "edificio": "Zeta",
+                "salon": "320"
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "nombre": "Luis Fernández",
+        "comunidad": "Comunidad San Juan",
+        "grupo": "Grupo 3",
+        "calendario": [
+            {
+                "dia": "Miércoles 20",
+                "encuentro": "Clase de Filosofía",
+                "horario": "10:00 - 11:30",
+                "edificio": "Eta",
+                "salon": "130"
+            },
+            {
+                "dia": "Jueves 21",
+                "encuentro": "Laboratorio de Biología",
+                "horario": "13:00 - 15:00",
+                "edificio": "Theta",
+                "salon": "230"
+            },
+            {
+                "dia": "Viernes 22",
+                "encuentro": "Foro de Ciencia",
+                "horario": "16:00 - 18:00",
+                "edificio": "Iota",
+                "salon": "330"
+            }
+        ]
+    }
+]

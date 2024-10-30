@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAM 6 Puerto Rico 2024</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="watermark">Sin Validez</div>
+
+<div class="container">
+    <header>
+        <img src="src/header.jpg" alt="">
+        <h1 id="h1_title"></h1>
+        <h2 id="h2_title"></h2>
+    </header>
+    
+    <main>
+        <h3 id="h3_grupo"></h3>
+        <div id="calendario"></div>        
+    </main>
+    
+    <footer>
+        <p>P.O. Box 191882- San Juan, P.R. 00919-1882</p>
+        <p>Tel: (787) 754-0995 / 754-0747</p>
+        <a href="mailto:cam6@cam6puertorico.com">cam6@cam6puertorico.com</a>
+    </footer>
+</div>
+
+<script>
+    // Obtener el parámetro "ID" de la URL
+
+     const loadData = async () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+
+        if (id) {
+            // Llamar al archivo JSON
+            await fetch('data.json') // Ruta del archivo JSON
+                .then(response => response.json())
+                .then(data => {              
+                    // Buscar el ID en el JSON
+                    const result = data.find(item => item.id === id);
+                    // Mostrar resultado en la página
+                    if (result) {
+                        document.getElementById('h1_title').innerText = `${result.nombre}`;
+                        document.getElementById('h2_title').innerText = `${result.comunidad}`;
+                        document.getElementById('h3_grupo').innerText = `${result.grupo}`;
+
+                        const calendario = document.getElementById("calendario");
+                        
+                        result.calendario.forEach(evento => {
+                            const item = document.createElement("div");
+                            item.innerHTML =`<h4>${evento.dia}</h4>`
+                            item.innerHTML += `<h5>${evento.encuentro}</h5>`
+                            item.innerHTML += `<p>${evento.horario} - Edificio ${evento.edificio}, Salón: ${evento.salon}`;
+                            calendario.appendChild(item);
+                        });
+
+
+
+                    } else {
+                        document.getElementById('result').innerText = 'ID no encontrado';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al leer el archivo JSON:', error);
+                    document.getElementById('result').innerText = 'Error al cargar los datos';
+                });
+        } else {
+            document.getElementById('result').innerText = 'No se proporcionó un ID en la URL';
+        }
+    }
+
+    loadData();
+
+</script>
+
+</body>
+</html>
