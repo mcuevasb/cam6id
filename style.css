@@ -82,6 +82,11 @@ h5{
 
 /* Responsividad */
 @media (max-width: 500px) {
+    
+    body{
+        align-items:baseline
+    }
+
     .container {
         max-width: 384px;
     }
