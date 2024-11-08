@@ -64,15 +64,15 @@
 
 
                     } else {
-                        document.getElementById('result').innerText = 'ID no encontrado';
+                        document.getElementById('h3_grupo').innerText = 'ID no encontrado';
                     }
                 })
                 .catch(error => {
                     console.error('Error al leer el archivo JSON:', error);
-                    document.getElementById('result').innerText = 'Error al cargar los datos';
+                    document.getElementById('h3_grupo').innerText = 'Error al cargar los datos';
                 });
         } else {
-            document.getElementById('result').innerText = 'No se proporcionó un ID en la URL';
+            document.getElementById('h3_grupo').innerText = 'No se proporcionó un ID';
         }
     }
 
