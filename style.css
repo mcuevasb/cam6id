@@ -84,7 +84,7 @@ h5{
 @media (max-width: 500px) {
     
     body{
-        align-items:baseline
+        align-items: baseline;
     }
 
     .container {
@@ -93,6 +93,8 @@ h5{
 
     .watermark{
         font-size: 4rem;
+        top: 35%;
+        
     }
 
 }
