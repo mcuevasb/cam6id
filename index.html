@@ -40,13 +40,11 @@
 
         if (id) {
             // Llamar al archivo JSON
-            const url = `http://localhost:3000/cursantes?id=${id}`
-            
-            await fetch(url) // Ruta del archivo JSON
+            await fetch('data.json') // Ruta del archivo JSON
                 .then(response => response.json())
-                .then(data => {                                
-                    const [result] = data
-
+                .then(data => {              
+                    // Buscar el ID en el JSON
+                    const result = data.find(item => item.id === id);
                     // Mostrar resultado en la página
                     if (result) {
                         document.getElementById('h1_title').innerText = `${result.nombre}`;
