@@ -40,12 +40,12 @@
 
         if (id) {
             // Llamar al archivo JSON
-            const url = `http://localhost:3000/cursantes?id=${id}`
+            const url = `https://cam6jsonserver.onrender.com/?id=${id}`
             
             await fetch(url) // Ruta del archivo JSON
                 .then(response => response.json())
                 .then(data => {                                
-                    const [result] = data
+                    const result = data
 
                     // Mostrar resultado en la página
                     if (result) {
