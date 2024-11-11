@@ -40,11 +40,14 @@
 
         if (id) {
             // Llamar al archivo JSON
-            await fetch('data.json') // Ruta del archivo JSON
+
+            const url = `https://cam6jsonserver.onrender.com/?id=${id}`
+            
+            await fetch(url) // Ruta del archivo JSON
                 .then(response => response.json())
-                .then(data => {              
-                    // Buscar el ID en el JSON
-                    const result = data.find(item => item.id === id);
+                .then(data => {                                
+                    const result = data
+
                     // Mostrar resultado en la página
                     if (result) {
                         document.getElementById('h1_title').innerText = `${result.nombre}`;
