@@ -40,7 +40,8 @@
 
         if (id) {
             // Llamar al archivo JSON
-            const url = `https://cam6jsonserver.onrender.com/?id=${id}`
+            const url = `http://192.168.0.3:3000/?id=${id}`
+            //const url = `https://cam6jsonserver.onrender.com/?id=${id}`
             
             await fetch(url) // Ruta del archivo JSON
                 .then(response => response.json())
@@ -50,16 +51,16 @@
                     // Mostrar resultado en la página
                     if (result) {
                         document.getElementById('h1_title').innerText = `${result.nombre}`;
-                        document.getElementById('h2_title').innerText = `${result.comunidad}`;
-                        document.getElementById('h3_grupo').innerText = `${result.grupo}`;
-
-                        const calendario = document.getElementById("calendario");
+                        document.getElementById('h2_title').innerText = `Grupo: ${result.grupo}`;
                         
-                        result.calendario.forEach(evento => {
+
+                        const agenda = document.getElementById("agenda");
+                        
+                        result.agenda.forEach(evento => {
                             const item = document.createElement("div");
                             item.innerHTML =`<h4>${evento.dia}</h4>`
-                            item.innerHTML += `<h5>${evento.encuentro}</h5>`
-                            item.innerHTML += `<p>${evento.horario} - Edificio ${evento.edificio}, Salón: ${evento.salon}`;
+                            item.innerHTML += `<h5>Encuentro: ${evento.encuentro}</h5>`
+                            item.innerHTML += `<p>${evento.horario} - ${evento.edificio}${(evento.salon ? `, ${evento.salon}` : "")}</p>`;
                             calendario.appendChild(item);
                         });
 
