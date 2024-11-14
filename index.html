@@ -49,7 +49,8 @@
                     // Mostrar resultado en la página
                     if (result) {
                         document.getElementById('h1_title').innerText = `${result.nombre}`;
-                        document.getElementById('h2_title').innerText = `Grupo: ${result.grupo}`;
+                        document.getElementById('h2_title').innerText = `${result.Pais}`;
+                        document.getElementById('h3_grupo').innerText = `Grupo: ${result.grupo}`;
                         
 
                         const agenda = document.getElementById("agenda");
