@@ -72,6 +72,7 @@
                 .catch(error => {
                     console.error('Error al leer el archivo JSON:', error);
                     document.getElementById('h3_grupo').innerText = 'Error al cargar los datos';
+                    window.location.reload();
                 });
         } else {
             document.getElementById('h3_grupo').innerText = 'No se proporcionó un ID';
